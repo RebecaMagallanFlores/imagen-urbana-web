@@ -34,10 +34,11 @@ bajar "$IMG/inicio-1100.webp"     "$base/$I?w=1100&h=1450&fit=crop&fm=webp&q=72"
 bajar "$IMG/compartir-inicio.jpg" "$base/$I?w=1200&h=630&fit=crop&fm=jpg&q=78"
 # Nosotros — Eduardo Gorghetto (Unsplash): https://unsplash.com/photos/white-architectural-structure-with-stairs-and-blue-sky-Y9uYq6aDHAU
 bajar "$IMG/nosotros.webp" "$base/photo-1763046289892-857b83dc070f?w=1200&h=1500&fit=crop&fm=webp&q=72"
-# Servicio Remodelación — Milivoj Kuhar (Unsplash): https://unsplash.com/photos/man-climbing-on-ladder-inside-room-Te48TPzdcU8
-bajar "$IMG/servicio-remodelacion.webp" "$base/photo-1517581177682-a085bb7ffb15?w=1200&h=1500&fit=crop&fm=webp&q=72"
 # Servicio Modernización — Jason Briscoe (Unsplash): https://unsplash.com/photos/white-wooden-kitchen-island-and-cupboard-cabinets-near-glass-panel-door-AQl-J19ocWE
 bajar "$IMG/servicio-modernizacion.webp" "$base/photo-1502005097973-6a7082348e28?w=1200&h=1500&fit=crop&fm=webp&q=72"
+
+# Servicio Mantenimiento y preservación — Pavel Boltov (Unsplash): https://unsplash.com/photos/window-cleaner-rappels-down-a-building-facade-6I0di73uRdw
+bajar "$IMG/servicio-mantenimiento.webp" "$base/photo-1758836113725-a1b082c622bd?w=1200&h=1500&fit=crop&fm=webp&q=72"
 
 # Tipografía Archivo (variable: peso y anchura) — Fontsource, licencia SIL Open Font License 1.1
 if [ ! -s "$FONTS/archivo-latin-wdth-normal.woff2" ]; then
