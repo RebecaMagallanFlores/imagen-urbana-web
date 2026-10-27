@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+# Descarga y optimiza las fotografías (Unsplash) y la tipografía (Archivo, SIL OFL)
+# como recursos locales del sitio. Se ejecuta desde GitHub Actions.
+set -euo pipefail
+cd "$(dirname "$0")/.."
+
+IMG=assets/img
+FONTS=assets/fonts
+mkdir -p "$IMG" "$FONTS"
+
+base="https://images.unsplash.com"
+bajar() { # destino  url
+  curl -fsSL --retry 3 --retry-delay 2 -o "$1" "$2"
+  echo "ok  $1  $(wc -c < "$1") bytes"
+}
+
+# Portada — Nathan Waters (Unsplash): https://unsplash.com/photos/in-progress-building-structure-photo-j7q-Z9DV3zw
+P="photo-1536895058696-a69b1c7ba34f"
+bajar "$IMG/portada-2000.webp" "$base/$P?w=2000&h=1300&fit=crop&crop=focalpoint&fp-x=0.45&fp-y=0.36&fm=webp&q=70"
+bajar "$IMG/portada-1100.webp" "$base/$P?w=1100&h=1500&fit=crop&fm=webp&q=68"
+bajar "$IMG/compartir.jpg"     "$base/$P?w=1200&h=630&fit=crop&crop=focalpoint&fp-x=0.45&fp-y=0.36&fm=jpg&q=72"
+
+# Nosotros — Jacek Dylag (Unsplash): https://unsplash.com/photos/gray-metal-building-frame-near-tower-crane-during-daytime-nhCPOp4A2Xo
+bajar "$IMG/estructura.webp" "$base/photo-1527335988388-b40ee248d80c?w=1200&h=1500&fit=crop&fm=webp&q=70"
+
+# Bloque visual
+# Samuel Regan-Asante (Unsplash): https://unsplash.com/photos/people-walking-on-paved-area-with-modern-buildings-wCjB6_qGlcI
+bajar "$IMG/ciudad.webp"  "$base/photo-1775504982849-0ea470c0bf41?w=1200&h=1600&fit=crop&fm=webp&q=70"
+# Tannis Sullivan (Unsplash): https://unsplash.com/photos/a-modern-building-has-a-geometric-glass-facade-2lzOwGQs5PA
+bajar "$IMG/fachada.webp" "$base/photo-1748814391989-08b58854d77e?w=1200&h=800&fit=crop&fm=webp&q=70"
+# Design Hills (Unsplash): https://unsplash.com/photos/concrete-building-under-construction-hfI0pr6g4yw
+bajar "$IMG/obra.webp"    "$base/photo-1621511075938-f03482369feb?w=1200&h=800&fit=crop&fm=webp&q=70"
+
+# Tipografía Archivo (variable: peso y anchura) — Fontsource, licencia SIL Open Font License 1.1
+tmp="$(mktemp -d)"
+( cd "$tmp" && npm pack @fontsource-variable/archivo --silent >/dev/null && tar xzf fontsource-variable-archivo-*.tgz )
+cp "$tmp/package/files/archivo-latin-wdth-normal.woff2"     "$FONTS/"
+cp "$tmp/package/files/archivo-latin-ext-wdth-normal.woff2" "$FONTS/"
+cp "$tmp/package/LICENSE" "$FONTS/LICENSE-Archivo-OFL.txt" 2>/dev/null || true
+rm -rf "$tmp"
+ls -la "$FONTS"
