@@ -19,6 +19,10 @@ CREDITOS.md             Procedencia y licencias de imágenes y tipografía
 Todo el texto está en `index.html`. Las tres categorías de servicios están en la sección `id="servicios"`.
 Al guardar un cambio en la rama `main`, GitHub Pages vuelve a publicar en uno o dos minutos.
 
+## Al cambiar estilos o script
+
+Sube el número `?v=` de `estilos.css` y `sitio.js` en `index.html` para que los navegadores descarguen la versión nueva.
+
 ## Fotografías
 
 Ya están guardadas y optimizadas en `assets/img/`. Para cambiar una foto, reemplaza el archivo con otro del mismo nombre y proporción. Procedencia en `CREDITOS.md`.
