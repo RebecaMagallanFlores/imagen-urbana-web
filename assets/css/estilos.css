@@ -39,7 +39,7 @@
   --fuente: "Archivo", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
   --t-portada: clamp(2.5rem, 7.2vw, 6.25rem);
   --t-seccion: clamp(2rem, 4.6vw, 3.6rem);
-  --t-servicio: clamp(1.45rem, 2.2vw, 1.85rem);
+  --t-servicio: clamp(1.4rem, 1.9vw, 1.7rem);
   --t-grande: clamp(1.1rem, 1.5vw, 1.3rem);
   --t-base: 1.0625rem;
   --t-chica: 0.875rem;
@@ -294,7 +294,13 @@ address { font-style: normal; }
   width: 36px; height: 36px; margin-bottom: .35rem;
   fill: none; stroke: var(--oro); stroke-width: 1.5; stroke-linecap: square; stroke-linejoin: miter;
 }
-.servicio__nombre { font-size: var(--t-servicio); line-height: 1.15; font-weight: 600; font-stretch: 110%; letter-spacing: -.01em; }
+.servicio__nombre {
+  font-size: var(--t-servicio); line-height: 1.15; font-weight: 600; font-stretch: 106%;
+  letter-spacing: -.01em; text-wrap: balance; hyphens: manual; overflow-wrap: normal;
+}
+/* En escritorio, los títulos ocupan el mismo alto para que las descripciones queden alineadas */
+@media (min-width: 900px) { .servicio__nombre { min-height: calc(3 * 1.15em); } }
+@media (min-width: 1200px) { .servicio__nombre { min-height: calc(2 * 1.15em); } }
 .servicio__texto { color: var(--carbon-suave); max-width: 40ch; }
 @media (max-width: 899px) { .servicio__foto img { aspect-ratio: 3 / 2; } }
 @media (min-width: 900px) {
