@@ -15,12 +15,6 @@ bajar() { # destino  url  (omite los archivos que ya existen)
   echo "ok  $1  $(wc -c < "$1") bytes"
 }
 
-# Portada — Nathan Waters (Unsplash): https://unsplash.com/photos/in-progress-building-structure-photo-j7q-Z9DV3zw
-P="photo-1536895058696-a69b1c7ba34f"
-bajar "$IMG/portada-2000.webp" "$base/$P?w=2000&h=1300&fit=crop&crop=focalpoint&fp-x=0.45&fp-y=0.36&fm=webp&q=70"
-bajar "$IMG/portada-1100.webp" "$base/$P?w=1100&h=1500&fit=crop&fm=webp&q=68"
-bajar "$IMG/compartir.jpg"     "$base/$P?w=1200&h=630&fit=crop&crop=focalpoint&fp-x=0.45&fp-y=0.36&fm=jpg&q=72"
-
 # Nosotros — Jacek Dylag (Unsplash): https://unsplash.com/photos/gray-metal-building-frame-near-tower-crane-during-daytime-nhCPOp4A2Xo
 bajar "$IMG/estructura.webp" "$base/photo-1527335988388-b40ee248d80c?w=1200&h=1500&fit=crop&fm=webp&q=70"
 
