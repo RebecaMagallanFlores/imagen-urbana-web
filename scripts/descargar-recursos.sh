@@ -9,7 +9,8 @@ FONTS=assets/fonts
 mkdir -p "$IMG" "$FONTS"
 
 base="https://images.unsplash.com"
-bajar() { # destino  url
+bajar() { # destino  url  (omite los archivos que ya existen)
+  if [ -s "$1" ]; then echo "ya existe  $1"; return; fi
   curl -fsSL --retry 3 --retry-delay 2 -o "$1" "$2"
   echo "ok  $1  $(wc -c < "$1") bytes"
 }
@@ -31,11 +32,26 @@ bajar "$IMG/fachada.webp" "$base/photo-1748814391989-08b58854d77e?w=1200&h=800&f
 # Design Hills (Unsplash): https://unsplash.com/photos/concrete-building-under-construction-hfI0pr6g4yw
 bajar "$IMG/obra.webp"    "$base/photo-1621511075938-f03482369feb?w=1200&h=800&fit=crop&fm=webp&q=70"
 
+# ---- Versión luminosa (octubre 2026) ----
+# Portada — Pierre Châtel-Innocenti (Unsplash): https://unsplash.com/photos/white-concrete-building-h9ek6QA2jOU
+I="photo-1530088018703-11b253bae577"
+bajar "$IMG/inicio-2000.webp"     "$base/$I?w=2000&h=1250&fit=crop&fm=webp&q=72"
+bajar "$IMG/inicio-1100.webp"     "$base/$I?w=1100&h=1450&fit=crop&fm=webp&q=72"
+bajar "$IMG/compartir-inicio.jpg" "$base/$I?w=1200&h=630&fit=crop&fm=jpg&q=78"
+# Nosotros — Eduardo Gorghetto (Unsplash): https://unsplash.com/photos/white-architectural-structure-with-stairs-and-blue-sky-Y9uYq6aDHAU
+bajar "$IMG/nosotros.webp" "$base/photo-1763046289892-857b83dc070f?w=1200&h=1500&fit=crop&fm=webp&q=72"
+# Servicio Remodelación — Milivoj Kuhar (Unsplash): https://unsplash.com/photos/man-climbing-on-ladder-inside-room-Te48TPzdcU8
+bajar "$IMG/servicio-remodelacion.webp" "$base/photo-1517581177682-a085bb7ffb15?w=1200&h=1500&fit=crop&fm=webp&q=72"
+# Servicio Modernización — Jason Briscoe (Unsplash): https://unsplash.com/photos/white-wooden-kitchen-island-and-cupboard-cabinets-near-glass-panel-door-AQl-J19ocWE
+bajar "$IMG/servicio-modernizacion.webp" "$base/photo-1502005097973-6a7082348e28?w=1200&h=1500&fit=crop&fm=webp&q=72"
+
 # Tipografía Archivo (variable: peso y anchura) — Fontsource, licencia SIL Open Font License 1.1
+if [ ! -s "$FONTS/archivo-latin-wdth-normal.woff2" ]; then
 tmp="$(mktemp -d)"
 ( cd "$tmp" && npm pack @fontsource-variable/archivo --silent >/dev/null && tar xzf fontsource-variable-archivo-*.tgz )
 cp "$tmp/package/files/archivo-latin-wdth-normal.woff2"     "$FONTS/"
 cp "$tmp/package/files/archivo-latin-ext-wdth-normal.woff2" "$FONTS/"
 cp "$tmp/package/LICENSE" "$FONTS/LICENSE-Archivo-OFL.txt" 2>/dev/null || true
 rm -rf "$tmp"
+fi
 ls -la "$FONTS"
