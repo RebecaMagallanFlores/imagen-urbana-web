@@ -15,16 +15,14 @@ bajar() { # destino  url  (omite los archivos que ya existen)
   echo "ok  $1  $(wc -c < "$1") bytes"
 }
 
-# Nosotros — Jacek Dylag (Unsplash): https://unsplash.com/photos/gray-metal-building-frame-near-tower-crane-during-daytime-nhCPOp4A2Xo
+# Servicio Construcción — Jacek Dylag (Unsplash): https://unsplash.com/photos/gray-metal-building-frame-near-tower-crane-during-daytime-nhCPOp4A2Xo
 bajar "$IMG/estructura.webp" "$base/photo-1527335988388-b40ee248d80c?w=1200&h=1500&fit=crop&fm=webp&q=70"
 
-# Bloque visual
+# Sectores público y privado (Experiencia)
 # Samuel Regan-Asante (Unsplash): https://unsplash.com/photos/people-walking-on-paved-area-with-modern-buildings-wCjB6_qGlcI
 bajar "$IMG/ciudad.webp"  "$base/photo-1775504982849-0ea470c0bf41?w=1200&h=1600&fit=crop&fm=webp&q=70"
 # Tannis Sullivan (Unsplash): https://unsplash.com/photos/a-modern-building-has-a-geometric-glass-facade-2lzOwGQs5PA
 bajar "$IMG/fachada.webp" "$base/photo-1748814391989-08b58854d77e?w=1200&h=800&fit=crop&fm=webp&q=70"
-# Design Hills (Unsplash): https://unsplash.com/photos/concrete-building-under-construction-hfI0pr6g4yw
-bajar "$IMG/obra.webp"    "$base/photo-1621511075938-f03482369feb?w=1200&h=800&fit=crop&fm=webp&q=70"
 
 # ---- Versión luminosa (octubre 2026) ----
 # Portada — Pierre Châtel-Innocenti (Unsplash): https://unsplash.com/photos/white-concrete-building-h9ek6QA2jOU

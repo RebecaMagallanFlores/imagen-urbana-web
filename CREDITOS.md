@@ -2,7 +2,7 @@
 
 ## Fotografías (Licencia Unsplash)
 
-Todas las fotografías son **ilustrativas**: no muestran obras de Imagen Urbana y Modernización.
+Todas las fotografías son **imágenes de referencia**: no muestran obras de Imagen Urbana y Modernización y no deben presentarse como proyectos propios. Para agregar proyectos reales y autorizados, ver el comentario "ESPACIO PARA PROYECTOS AUTORIZADOS" en `index.html`.
 Se usan bajo la [Licencia Unsplash](https://unsplash.com/license), que permite uso gratuito comercial y no comercial sin atribución obligatoria. Se dejan los créditos como cortesía y registro de procedencia.
 
 | Archivo | Uso en el sitio | Autor | Fuente |
@@ -10,11 +10,10 @@ Se usan bajo la [Licencia Unsplash](https://unsplash.com/license), que permite u
 | `assets/img/inicio-2000.webp`, `inicio-1100.webp`, `compartir-inicio.jpg` | Portada y vista previa al compartir | Pierre Châtel-Innocenti | https://unsplash.com/photos/white-concrete-building-h9ek6QA2jOU |
 | `assets/img/nosotros.webp` | Sección Nosotros | Eduardo Gorghetto | https://unsplash.com/photos/white-architectural-structure-with-stairs-and-blue-sky-Y9uYq6aDHAU |
 | `assets/img/estructura.webp` | Servicio Construcción | Jacek Dylag | https://unsplash.com/photos/gray-metal-building-frame-near-tower-crane-during-daytime-nhCPOp4A2Xo |
-| `assets/img/servicio-mantenimiento.webp` | Servicio Mantenimiento y preservación de inmuebles | Pavel Boltov | https://unsplash.com/photos/window-cleaner-rappels-down-a-building-facade-6I0di73uRdw |
+| `assets/img/servicio-mantenimiento.webp` | Servicio Mantenimiento y conservación | Pavel Boltov | https://unsplash.com/photos/window-cleaner-rappels-down-a-building-facade-6I0di73uRdw |
 | `assets/img/servicio-modernizacion.webp` | Servicio Modernización | Jason Briscoe | https://unsplash.com/photos/white-wooden-kitchen-island-and-cupboard-cabinets-near-glass-panel-door-AQl-J19ocWE |
-| `assets/img/ciudad.webp` | Bloque visual | Samuel Regan-Asante | https://unsplash.com/photos/people-walking-on-paved-area-with-modern-buildings-wCjB6_qGlcI |
-| `assets/img/fachada.webp` | Bloque visual | Tannis Sullivan | https://unsplash.com/photos/a-modern-building-has-a-geometric-glass-facade-2lzOwGQs5PA |
-| `assets/img/obra.webp` | Bloque visual | Design Hills | https://unsplash.com/photos/concrete-building-under-construction-hfI0pr6g4yw |
+| `assets/img/ciudad.webp` | Bloque Sector público (Experiencia) | Samuel Regan-Asante | https://unsplash.com/photos/people-walking-on-paved-area-with-modern-buildings-wCjB6_qGlcI |
+| `assets/img/fachada.webp` | Bloque Sector privado (Experiencia) | Tannis Sullivan | https://unsplash.com/photos/a-modern-building-has-a-geometric-glass-facade-2lzOwGQs5PA |
 
 Las imágenes se descargaron recortadas y optimizadas (WebP) con `scripts/descargar-recursos.sh`.
 

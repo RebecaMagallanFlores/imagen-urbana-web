@@ -56,7 +56,7 @@
 
   if (!sinMovimiento && "IntersectionObserver" in window && elementos.length) {
     /* Retraso escalonado dentro de cada grupo de tarjetas */
-    var grupos = [".servicios__lista", ".galeria__rejilla", ".contacto__datos"];
+    var grupos = [".servicios__lista", ".valores__lista", ".metodo__lista", ".sectores", ".proyectos"];
     grupos.forEach(function (selector) {
       var grupo = document.querySelector(selector);
       if (!grupo) return;
@@ -115,5 +115,96 @@
       });
     }, { rootMargin: "-45% 0px -50% 0px" });
     secciones.forEach(function (s) { obsSecciones.observe(s); });
+  }
+  /* Formulario de contacto.
+     No hay servidor: al enviarlo se abre la aplicación de correo del visitante
+     con el mensaje ya preparado. No se guarda ni se transmite nada por otra vía. */
+  var formulario = document.getElementById("formulario");
+  if (formulario) {
+    var CORREO = "imagen_urbanizacion@outlook.com";
+    var estado = document.getElementById("formulario-estado");
+    var etiquetas = {
+      publico: { asunto: "Solicitud de información - Sector público", tipo: "Solicitar información (sector público)" },
+      privado: { asunto: "Solicitud de cotización - Sector privado", tipo: "Solicitar cotización (sector privado)" }
+    };
+
+    function marcarSector(valor) {
+      var radio = formulario.querySelector('input[name="sector"][value="' + valor + '"]');
+      if (radio) radio.checked = true;
+    }
+    /* Los botones de los bloques de sector preseleccionan el tipo de solicitud */
+    document.querySelectorAll("[data-sector]").forEach(function (enlace) {
+      enlace.addEventListener("click", function () { marcarSector(enlace.getAttribute("data-sector")); });
+    });
+
+    function mensajeError(campo) {
+      if (campo.validity.valueMissing) return "Este campo es obligatorio.";
+      if (campo.validity.typeMismatch) return "Escribe un correo electrónico válido.";
+      return "Revisa este campo.";
+    }
+    function limpiarError(campo) {
+      campo.removeAttribute("aria-invalid");
+      var previo = document.getElementById(campo.id + "-error");
+      if (previo) previo.remove();
+      var desc = (campo.getAttribute("aria-describedby") || "").split(" ").filter(function (d) { return d && d !== campo.id + "-error"; });
+      if (desc.length) campo.setAttribute("aria-describedby", desc.join(" ")); else campo.removeAttribute("aria-describedby");
+    }
+    function mostrarError(campo) {
+      limpiarError(campo);
+      campo.setAttribute("aria-invalid", "true");
+      var aviso = document.createElement("p");
+      aviso.className = "campo__error";
+      aviso.id = campo.id + "-error";
+      aviso.textContent = mensajeError(campo);
+      campo.insertAdjacentElement("afterend", aviso);
+      var desc = campo.getAttribute("aria-describedby");
+      campo.setAttribute("aria-describedby", (desc ? desc + " " : "") + aviso.id);
+    }
+    formulario.querySelectorAll(".campo input, .campo select, .campo textarea").forEach(function (campo) {
+      campo.addEventListener("input", function () { if (campo.getAttribute("aria-invalid") && campo.checkValidity()) limpiarError(campo); });
+    });
+
+    formulario.addEventListener("submit", function (e) {
+      e.preventDefault();
+      estado.className = "formulario__estado";
+      estado.textContent = "";
+      var primero = null;
+      formulario.querySelectorAll(".campo input, .campo select, .campo textarea").forEach(function (campo) {
+        if (!campo.checkValidity()) { mostrarError(campo); if (!primero) primero = campo; } else { limpiarError(campo); }
+      });
+      var sector = formulario.querySelector('input[name="sector"]:checked');
+      var consentimiento = formulario.querySelector('input[name="consentimiento"]');
+      var faltantes = [];
+      if (!sector) faltantes.push("elige el tipo de solicitud");
+      if (primero) faltantes.push("completa los campos marcados");
+      if (!consentimiento.checked) faltantes.push("acepta el aviso sobre tus datos");
+      if (faltantes.length) {
+        estado.classList.add("es-error");
+        estado.textContent = "Para continuar, " + faltantes.join(", ") + ".";
+        (primero || (!sector ? formulario.querySelector('input[name="sector"]') : consentimiento)).focus();
+        return;
+      }
+
+      var datos = etiquetas[sector.value];
+      var v = function (nombre) { return (formulario.elements[nombre].value || "").trim() || "No indicado"; };
+      var cuerpo = [
+        "Tipo de solicitud: " + datos.tipo,
+        "Nombre: " + v("nombre"),
+        "Empresa u organización: " + v("empresa"),
+        "Correo electrónico: " + v("correo"),
+        "Teléfono: " + v("telefono"),
+        "Tipo de servicio: " + v("servicio"),
+        "",
+        "Descripción del proyecto:",
+        v("descripcion")
+      ].join("\r\n");
+
+      window.location.href = "mailto:" + CORREO +
+        "?subject=" + encodeURIComponent(datos.asunto) +
+        "&body=" + encodeURIComponent(cuerpo);
+
+      estado.classList.add("es-listo");
+      estado.textContent = "Abrimos tu aplicación de correo con la solicitud preparada. Revisa el mensaje y envíalo. Si no se abrió, escríbenos directamente a " + CORREO + " o llámanos al (55) 8494 4232.";
+    });
   }
 })();

@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Imagen Urbana y Modernización | Constructora en Coyoacán, CDMX</title>
-  <meta name="description" content="Imagen Urbana y Modernización S.A. de C.V. es una constructora en Coyoacán, Ciudad de México. Construcción, mantenimiento y preservación de inmuebles, y modernización de espacios. Llámanos al (55) 8494 4232.">
-  <meta name="theme-color" content="#faf8f4">
+  <title>Imagen Urbana y Modernización | Construcción, mantenimiento y modernización de inmuebles</title>
+  <meta name="description" content="Empresa mexicana con sede en Coyoacán, CDMX, dedicada a la construcción, mantenimiento, conservación y modernización de inmuebles para los sectores público y privado. Tel. (55) 8494 4232.">
+  <meta name="theme-color" content="#f7f5f1">
 
   <!-- Metadatos para compartir -->
   <link rel="canonical" href="https://rebecamagallanflores.github.io/imagen-urbana-web/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_MX">
   <meta property="og:site_name" content="Imagen Urbana y Modernización">
-  <meta property="og:title" content="Imagen Urbana y Modernización | Constructora en CDMX">
-  <meta property="og:description" content="Construimos espacios. Transformamos entornos. Hablemos de tu proyecto: (55) 8494 4232.">
+  <meta property="og:title" content="Imagen Urbana y Modernización S.A. de C.V.">
+  <meta property="og:description" content="Construcción y modernización con visión, compromiso y experiencia. Proyectos de los sectores público y privado.">
   <meta property="og:url" content="https://rebecamagallanflores.github.io/imagen-urbana-web/">
   <meta property="og:image" content="https://rebecamagallanflores.github.io/imagen-urbana-web/assets/img/compartir-inicio.jpg">
   <meta property="og:image:width" content="1200">
@@ -27,8 +27,8 @@
 
   <link rel="preload" href="assets/fonts/archivo-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/img/inicio-1100.webp" as="image" type="image/webp"
-        imagesrcset="assets/img/inicio-1100.webp 1100w, assets/img/inicio-2000.webp 2000w" imagesizes="100vw">
-  <link rel="stylesheet" href="assets/css/estilos.css?v=2026-10-27-5">
+        imagesrcset="assets/img/inicio-1100.webp 1100w, assets/img/inicio-2000.webp 2000w" imagesizes="(min-width: 900px) 50vw, 100vw">
+  <link rel="stylesheet" href="assets/css/estilos.css?v=2026-10-27-6">
   <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
@@ -50,9 +50,10 @@
           <li><a href="#inicio">Inicio</a></li>
           <li><a href="#nosotros">Nosotros</a></li>
           <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#experiencia">Experiencia</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
-        <a class="boton boton--carbon menu__cta" href="#contacto">Hablemos de tu proyecto</a>
+        <a class="boton boton--grafito menu__cta" href="#contacto">Hablemos de tu proyecto</a>
       </nav>
     </div>
   </header>
@@ -61,54 +62,123 @@
 
     <!-- ============ PORTADA ============ -->
     <section class="portada" id="inicio" aria-labelledby="portada-titulo">
+      <div class="portada__texto">
+        <p class="seccion__marca">Imagen Urbana y Modernización S.A. de C.V.</p>
+        <h1 class="portada__titulo" id="portada-titulo">Construcción y modernización con visión, compromiso y experiencia.</h1>
+        <p class="portada__bajada">Somos una empresa mexicana dedicada a la construcción, mantenimiento y modernización de inmuebles, con participación en proyectos de los sectores público y privado.</p>
+        <div class="botones">
+          <a class="boton boton--grafito" href="#servicios">Conocer nuestros servicios</a>
+          <a class="boton boton--linea" href="#contacto">Hablemos de tu proyecto</a>
+        </div>
+      </div>
       <div class="portada__foto" aria-hidden="true">
         <img src="assets/img/inicio-1100.webp"
              srcset="assets/img/inicio-1100.webp 1100w, assets/img/inicio-2000.webp 2000w"
-             sizes="100vw" width="2000" height="1250" alt="" fetchpriority="high">
+             sizes="(min-width: 900px) 50vw, 100vw" width="2000" height="1250" alt="" fetchpriority="high">
       </div>
+    </section>
 
-      <div class="portada__contenido contenedor">
-        <h1 class="portada__titulo" id="portada-titulo">
-          <span class="linea">Construimos espacios.</span>
-          <span class="linea">Transformamos entornos.</span>
-        </h1>
-        <p class="portada__texto">Imagen Urbana y Modernización es una empresa constructora en Coyoacán, Ciudad de México. Platiquemos sobre el espacio que quieres construir, renovar o mejorar.</p>
-        <div class="botones">
-          <a class="boton boton--carbon" href="#contacto">Contactar</a>
-          <a class="boton boton--linea" href="#nosotros">Conocer la empresa</a>
-        </div>
-      </div>
+    <!-- Franja institucional -->
+    <section class="franja" aria-label="Ámbitos de trabajo">
+      <ul class="franja__lista contenedor">
+        <li>Construcción</li>
+        <li>Mantenimiento</li>
+        <li>Modernización</li>
+        <li>Sector público y privado</li>
+      </ul>
     </section>
 
     <!-- ============ NOSOTROS ============ -->
     <section class="seccion seccion--blanca nosotros" id="nosotros" aria-labelledby="nosotros-titulo">
-      <div class="contenedor nosotros__rejilla">
-        <figure class="nosotros__foto revelar">
-          <span class="recorte">
-            <img src="assets/img/nosotros.webp" width="1200" height="1500" loading="lazy"
-                 alt="Patio de muros blancos con escalera bajo un cielo azul">
-          </span>
-        </figure>
-        <div class="nosotros__texto revelar">
-          <p class="seccion__marca">Nosotros</p>
-          <h2 class="titulo-seccion" id="nosotros-titulo">Orden, cuidado y claridad en cada etapa.</h2>
-          <p class="destacado">Somos Imagen Urbana y Modernización S.A. de C.V., una constructora mexicana con oficina en Coyoacán, CDMX. Trabajamos con el sector público y privado en proyectos de construcción, mantenimiento y modernización de inmuebles.</p>
-          <p>Buscamos que cada proyecto avance con orden, comunicación clara y atención al detalle. Nos gusta empezar escuchando: entender qué necesitas, en qué espacio y con qué objetivo, para proponerte un camino claro.</p>
-          <p>Si tienes una idea, un espacio por mejorar o un proyecto en puerta, conversemos.</p>
-          <a class="enlace-linea" href="#contacto">Escríbenos o llámanos</a>
+      <div class="contenedor">
+        <div class="nosotros__rejilla">
+          <figure class="nosotros__foto revelar">
+            <span class="recorte">
+              <img src="assets/img/nosotros.webp" width="1200" height="1500" loading="lazy"
+                   alt="Patio de muros blancos con escalera bajo un cielo azul">
+            </span>
+          </figure>
+          <div class="nosotros__texto revelar">
+            <p class="seccion__marca">Quiénes somos</p>
+            <h2 class="titulo-seccion" id="nosotros-titulo">Orden, cuidado y claridad en cada etapa.</h2>
+            <p class="destacado">Imagen Urbana y Modernización S.A. de C.V. es una empresa mexicana con sede en Coyoacán, Ciudad de México, dedicada a la construcción, mantenimiento, conservación y modernización de inmuebles.</p>
+            <p>Nuestra actividad comprende proyectos de los sectores público y privado, con un enfoque en la planeación, la coordinación de trabajos, la atención al detalle y el cumplimiento de los requerimientos particulares de cada intervención.</p>
+          </div>
         </div>
+
+        <!-- Misión y visión -->
+        <div class="proposito revelar">
+          <article class="proposito__item">
+            <h3 class="proposito__titulo">Misión</h3>
+            <p>Desarrollar soluciones de construcción, mantenimiento y modernización que respondan a las necesidades de nuestros clientes, mediante una ejecución organizada, responsable y orientada a la calidad.</p>
+          </article>
+          <article class="proposito__item">
+            <h3 class="proposito__titulo">Visión</h3>
+            <p>Consolidarnos como una empresa constructora reconocida por su profesionalismo, capacidad de respuesta y compromiso con la mejora de los espacios e infraestructura en los que participamos.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Valores -->
+    <section class="seccion seccion--piedra valores" aria-labelledby="valores-titulo">
+      <div class="contenedor">
+        <div class="encabezado-seccion revelar">
+          <p class="seccion__marca">Valores</p>
+          <h2 class="titulo-seccion" id="valores-titulo">Principios que orientan nuestro trabajo.</h2>
+        </div>
+        <ul class="valores__lista">
+          <li class="valor revelar"><h3 class="valor__nombre">Integridad</h3><p>Actuar con transparencia, responsabilidad y ética profesional.</p></li>
+          <li class="valor revelar"><h3 class="valor__nombre">Calidad</h3><p>Prestar atención a los procesos, materiales y detalles de ejecución.</p></li>
+          <li class="valor revelar"><h3 class="valor__nombre">Seguridad</h3><p>Promover prácticas de trabajo responsables y la prevención de riesgos.</p></li>
+          <li class="valor revelar"><h3 class="valor__nombre">Cumplimiento</h3><p>Orientar la planeación y ejecución hacia los compromisos establecidos.</p></li>
+          <li class="valor revelar"><h3 class="valor__nombre">Comunicación</h3><p>Mantener coordinación y claridad durante las diferentes etapas de los proyectos.</p></li>
+          <li class="valor revelar"><h3 class="valor__nombre">Compromiso</h3><p>Atender las necesidades de cada cliente con profesionalismo.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Metodología -->
+    <section class="seccion seccion--blanca metodo" aria-labelledby="metodo-titulo">
+      <div class="contenedor">
+        <div class="encabezado-seccion revelar">
+          <p class="seccion__marca">Metodología de trabajo</p>
+          <h2 class="titulo-seccion" id="metodo-titulo">Un proceso ordenado, de la necesidad a la entrega.</h2>
+        </div>
+        <ol class="metodo__lista">
+          <li class="etapa revelar">
+            <span class="etapa__numero" aria-hidden="true">01</span>
+            <h3 class="etapa__nombre">Análisis de necesidades</h3>
+            <p>Conocemos el inmueble, el uso que tendrá y los requerimientos de la intervención.</p>
+          </li>
+          <li class="etapa revelar">
+            <span class="etapa__numero" aria-hidden="true">02</span>
+            <h3 class="etapa__nombre">Planeación y propuesta</h3>
+            <p>Definimos alcances, etapas y recursos, y presentamos una propuesta clara.</p>
+          </li>
+          <li class="etapa revelar">
+            <span class="etapa__numero" aria-hidden="true">03</span>
+            <h3 class="etapa__nombre">Coordinación y ejecución</h3>
+            <p>Organizamos los trabajos y mantenemos comunicación constante durante la obra.</p>
+          </li>
+          <li class="etapa revelar">
+            <span class="etapa__numero" aria-hidden="true">04</span>
+            <h3 class="etapa__nombre">Seguimiento y entrega</h3>
+            <p>Revisamos lo ejecutado con el cliente y cerramos cada etapa de forma ordenada.</p>
+          </li>
+        </ol>
       </div>
     </section>
 
     <!-- ============ SERVICIOS ============ -->
     <section class="seccion seccion--piedra servicios" id="servicios" aria-labelledby="servicios-titulo">
       <div class="contenedor">
-        <div class="servicios__encabezado revelar">
+        <div class="encabezado-seccion encabezado-seccion--doble revelar">
           <div>
             <p class="seccion__marca">Servicios</p>
-            <h2 class="titulo-seccion" id="servicios-titulo">Lo que podemos hacer por tu espacio.</h2>
+            <h2 class="titulo-seccion" id="servicios-titulo">Construcción, mantenimiento y modernización de inmuebles.</h2>
           </div>
-          <p class="servicios__intro">Tres formas de trabajar contigo, según el punto de partida de tu proyecto.</p>
+          <p class="encabezado-seccion__intro">Atendemos cada intervención según sus características técnicas, operativas y de uso.</p>
         </div>
 
         <ul class="servicios__lista">
@@ -118,11 +188,8 @@
                    alt="Estructura metálica de un edificio en construcción junto a grúas torre">
             </figure>
             <div class="servicio__cuerpo">
-              <svg class="servicio__icono" viewBox="0 0 48 48" aria-hidden="true">
-                <path d="M6 42h36M10 42V18l14-10 14 10v24M18 42V28h12v14"/>
-              </svg>
               <h3 class="servicio__nombre">Construcción</h3>
-              <p class="servicio__texto">Obra para levantar nuevos espacios, planeada con orden y con comunicación clara en cada fase.</p>
+              <p class="servicio__texto">Ejecución de trabajos de construcción y adecuación de inmuebles, considerando las características técnicas y operativas de cada proyecto.</p>
             </div>
           </li>
           <li class="servicio revelar">
@@ -131,11 +198,8 @@
                    alt="Trabajador con equipo de seguridad dando mantenimiento a la fachada de un edificio de departamentos">
             </figure>
             <div class="servicio__cuerpo">
-              <svg class="servicio__icono" viewBox="0 0 48 48" aria-hidden="true">
-                <path d="M8 10h26v9H8zM34 14h6v11H21v6M18 31h6v11h-6z"/>
-              </svg>
-              <h3 class="servicio__nombre">Mantenimiento y preservación de inmuebles</h3>
-              <p class="servicio__texto">Realizamos trabajos de mantenimiento y conservación para cuidar las condiciones, la funcionalidad y la imagen de los inmuebles.</p>
+              <h3 class="servicio__nombre">Mantenimiento y conservación</h3>
+              <p class="servicio__texto">Servicios de mantenimiento preventivo, correctivo y conservación para preservar la funcionalidad y condiciones de los inmuebles.</p>
             </div>
           </li>
           <li class="servicio revelar">
@@ -144,75 +208,195 @@
                    alt="Cocina contemporánea con madera clara y luz natural">
             </figure>
             <div class="servicio__cuerpo">
-              <svg class="servicio__icono" viewBox="0 0 48 48" aria-hidden="true">
-                <path d="M8 40h32M14 40V20h20v20M14 20l10-12 10 12M24 26v8M20 30h8"/>
-              </svg>
               <h3 class="servicio__nombre">Modernización de espacios</h3>
-              <p class="servicio__texto">Actualización de espacios para mejorar su funcionalidad, su imagen y su confort.</p>
+              <p class="servicio__texto">Intervenciones de renovación, adaptación y mejoramiento de espacios para responder a nuevas necesidades funcionales y de uso.</p>
             </div>
           </li>
         </ul>
-
-        <p class="servicios__nota revelar">¿Tu proyecto no encaja exactamente en una categoría? <a href="#contacto">Cuéntanos y lo revisamos contigo.</a></p>
       </div>
     </section>
 
-    <!-- ============ BLOQUE VISUAL ============ -->
-    <section class="seccion seccion--blanca galeria" aria-labelledby="galeria-titulo">
+    <!-- ============ EXPERIENCIA: SECTOR PÚBLICO Y PRIVADO ============ -->
+    <section class="seccion seccion--blanca experiencia" id="experiencia" aria-labelledby="experiencia-titulo">
       <div class="contenedor">
-        <h2 class="titulo-seccion galeria__titulo revelar" id="galeria-titulo">Arquitectura, ciudad y oficio.</h2>
-        <div class="galeria__rejilla">
-          <figure class="galeria__item galeria__item--alta revelar">
-            <img src="assets/img/ciudad.webp" width="1200" height="1600" loading="lazy"
-                 alt="Personas caminando en un espacio urbano rodeado de edificios contemporáneos">
-          </figure>
-          <figure class="galeria__item revelar">
-            <img src="assets/img/fachada.webp" width="1200" height="800" loading="lazy"
-                 alt="Fachada contemporánea de vidrio con geometría marcada">
-          </figure>
-          <figure class="galeria__item revelar">
-            <img src="assets/img/obra.webp" width="1200" height="800" loading="lazy"
-                 alt="Edificio de concreto en proceso de construcción">
-          </figure>
+        <div class="encabezado-seccion encabezado-seccion--doble revelar">
+          <div>
+            <p class="seccion__marca">Experiencia</p>
+            <h2 class="titulo-seccion" id="experiencia-titulo">Experiencia que se refleja en cada proyecto.</h2>
+          </div>
+          <p class="encabezado-seccion__intro">Nuestra participación en proyectos de construcción, mantenimiento y modernización nos permite comprender la importancia de la planeación, la coordinación y la atención a los detalles durante cada etapa de trabajo.</p>
         </div>
+
+        <div class="sectores">
+          <!-- Sector público: se describe sin nombres, contratos, montos ni ubicaciones (información confidencial) -->
+          <article class="sector sector--publico revelar" id="sector-publico" aria-labelledby="publico-titulo">
+            <figure class="sector__foto">
+              <img src="assets/img/ciudad.webp" width="1200" height="1600" loading="lazy"
+                   alt="Espacio urbano con personas caminando entre edificios contemporáneos">
+            </figure>
+            <div class="sector__cuerpo">
+              <p class="sector__etiqueta">Sector público</p>
+              <h3 class="sector__titulo" id="publico-titulo">Experiencia en proyectos del sector público</h3>
+              <p>Imagen Urbana y Modernización S.A. de C.V. ha participado en proyectos del ámbito gubernamental, desarrollando actividades vinculadas con la construcción, mantenimiento, conservación y mejoramiento de inmuebles, de acuerdo con los requerimientos y alcances de cada intervención.</p>
+              <ul class="sector__ambitos" aria-label="Ámbitos de servicio en el sector público">
+                <li>Construcción</li>
+                <li>Mantenimiento</li>
+                <li>Conservación</li>
+                <li>Mejoramiento de inmuebles</li>
+              </ul>
+              <div class="sector__enlaces">
+                <a class="boton boton--oro" href="#contacto" data-sector="publico">Solicitar información</a>
+                <a class="enlace-linea enlace-linea--claro" href="#servicios">Ver servicios</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="sector sector--privado revelar" id="sector-privado" aria-labelledby="privado-titulo">
+            <figure class="sector__foto">
+              <img src="assets/img/fachada.webp" width="1200" height="800" loading="lazy"
+                   alt="Fachada contemporánea de vidrio con geometría marcada">
+            </figure>
+            <div class="sector__cuerpo">
+              <p class="sector__etiqueta">Sector privado</p>
+              <h3 class="sector__titulo" id="privado-titulo">Soluciones para el sector privado</h3>
+              <p>Ofrecemos servicios de construcción, adecuación, mantenimiento y modernización de inmuebles, con soluciones adaptadas a las necesidades de empresas, propietarios y administradores de espacios.</p>
+              <ul class="sector__ambitos" aria-label="Servicios para el sector privado">
+                <li>Construcción</li>
+                <li>Adecuación</li>
+                <li>Mantenimiento</li>
+                <li>Modernización</li>
+              </ul>
+              <div class="sector__enlaces">
+                <a class="boton boton--grafito" href="#contacto" data-sector="privado">Solicitar cotización</a>
+                <a class="enlace-linea" href="#servicios">Ver servicios</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!--
+          ESPACIO PARA PROYECTOS AUTORIZADOS
+          Cuando existan fotografías reales y autorizadas, agrega aquí una lista con esta estructura
+          (los estilos .proyectos y .proyecto ya están en estilos.css). No incluyas nombres de dependencias,
+          contratos, montos, funcionarios ni ubicaciones de proyectos confidenciales.
+
+          <div class="proyectos">
+            <article class="proyecto">
+              <figure class="proyecto__foto"><img src="assets/img/proyectos/NOMBRE.webp" width="1200" height="900" loading="lazy" alt="Descripción de la fotografía"></figure>
+              <p class="proyecto__tipo">Sector privado · Mantenimiento</p>
+              <h3 class="proyecto__nombre">Título autorizado del proyecto</h3>
+              <p class="proyecto__texto">Breve descripción autorizada de los trabajos.</p>
+            </article>
+          </div>
+        -->
       </div>
     </section>
 
     <!-- ============ CONTACTO ============ -->
     <section class="seccion seccion--piedra contacto" id="contacto" aria-labelledby="contacto-titulo">
-      <div class="contenedor">
-        <div class="contacto__encabezado revelar">
+      <div class="contenedor contacto__rejilla">
+        <div class="contacto__info revelar">
           <p class="seccion__marca">Contacto</p>
-          <h2 class="titulo-seccion" id="contacto-titulo">Hablemos de tu proyecto.</h2>
-          <p class="contacto__intro">Llámanos o escríbenos y cuéntanos qué tienes en mente. Te responderemos para conversar sobre los siguientes pasos.</p>
-        </div>
+          <h2 class="titulo-seccion" id="contacto-titulo">Cuéntanos sobre tu proyecto.</h2>
+          <p class="contacto__intro">Elige el tipo de solicitud y descríbenos lo que necesitas. También puedes llamarnos o escribirnos directamente.</p>
 
-        <div class="contacto__datos">
-          <div class="dato revelar">
-            <h3 class="dato__etiqueta">Teléfono</h3>
-            <p class="dato__valor"><a href="tel:+525584944232">(55) 8494 4232</a></p>
-            <a class="boton boton--carbon" href="tel:+525584944232">Llamar</a>
-          </div>
-          <div class="dato revelar">
-            <h3 class="dato__etiqueta">Correo</h3>
-            <p class="dato__valor dato__valor--correo"><a href="mailto:imagen_urbanizacion@outlook.com?subject=Consulta%20de%20proyecto">imagen_urbanizacion@<wbr>outlook.com</a></p>
-            <a class="boton boton--carbon" href="mailto:imagen_urbanizacion@outlook.com?subject=Consulta%20de%20proyecto">Enviar correo</a>
-          </div>
-          <div class="dato revelar">
-            <h3 class="dato__etiqueta">Domicilio</h3>
-            <address class="dato__valor dato__valor--domicilio">Av. México 49, int. 1, Col. Del Carmen, Coyoacán, CDMX, C.P. 04100.</address>
+          <dl class="datos">
+            <div class="dato">
+              <dt>Teléfono</dt>
+              <dd><a href="tel:+525584944232">(55) 8494 4232</a></dd>
+            </div>
+            <div class="dato">
+              <dt>Correo</dt>
+              <dd><a href="mailto:imagen_urbanizacion@outlook.com?subject=Consulta%20de%20proyecto">imagen_urbanizacion@<wbr>outlook.com</a></dd>
+            </div>
+            <div class="dato">
+              <dt>Domicilio</dt>
+              <dd><address>Av. México 49, int. 1, Col. Del Carmen, Coyoacán, CDMX, C.P. 04100.</address></dd>
+            </div>
+          </dl>
+          <div class="botones">
+            <a class="boton boton--grafito" href="tel:+525584944232">Llamar</a>
             <a class="boton boton--linea" href="https://www.google.com/maps/search/?api=1&amp;query=Av.%20M%C3%A9xico%2049%2C%20int.%201%2C%20Col.%20Del%20Carmen%2C%20Coyoac%C3%A1n%2C%20CDMX%2C%20C.P.%2004100" target="_blank" rel="noopener">Abrir en Google Maps<span class="visualmente-oculto"> (se abre en una pestaña nueva)</span></a>
           </div>
         </div>
+
+        <!-- Formulario: no usa servidor. Al enviarlo, abre la aplicación de correo del visitante con el mensaje preparado. -->
+        <form class="formulario revelar" id="formulario" action="mailto:imagen_urbanizacion@outlook.com" method="post" enctype="text/plain" novalidate>
+          <fieldset class="formulario__tipo">
+            <legend>Tipo de solicitud</legend>
+            <label class="opcion">
+              <input type="radio" name="sector" value="publico" required>
+              <span class="opcion__caja">
+                <span class="opcion__titulo">Solicitar información</span>
+                <span class="opcion__texto">Sector público</span>
+              </span>
+            </label>
+            <label class="opcion">
+              <input type="radio" name="sector" value="privado" required>
+              <span class="opcion__caja">
+                <span class="opcion__titulo">Solicitar cotización</span>
+                <span class="opcion__texto">Sector privado</span>
+              </span>
+            </label>
+          </fieldset>
+
+          <div class="campos">
+            <div class="campo">
+              <label for="f-nombre">Nombre <span class="obligatorio" aria-hidden="true">*</span></label>
+              <input id="f-nombre" name="nombre" type="text" autocomplete="name" required maxlength="120">
+            </div>
+            <div class="campo">
+              <label for="f-empresa">Empresa u organización</label>
+              <input id="f-empresa" name="empresa" type="text" autocomplete="organization" maxlength="160">
+            </div>
+            <div class="campo">
+              <label for="f-correo">Correo electrónico <span class="obligatorio" aria-hidden="true">*</span></label>
+              <input id="f-correo" name="correo" type="email" autocomplete="email" required maxlength="160">
+            </div>
+            <div class="campo">
+              <label for="f-telefono">Teléfono</label>
+              <input id="f-telefono" name="telefono" type="tel" autocomplete="tel" maxlength="30">
+            </div>
+            <div class="campo campo--ancho">
+              <label for="f-servicio">Tipo de servicio <span class="obligatorio" aria-hidden="true">*</span></label>
+              <select id="f-servicio" name="servicio" required>
+                <option value="">Selecciona una opción</option>
+                <option>Construcción</option>
+                <option>Mantenimiento y conservación</option>
+                <option>Modernización de espacios</option>
+                <option>Otro o aún no lo sé</option>
+              </select>
+            </div>
+            <div class="campo campo--ancho">
+              <label for="f-descripcion">Descripción del proyecto <span class="obligatorio" aria-hidden="true">*</span></label>
+              <textarea id="f-descripcion" name="descripcion" rows="5" required maxlength="1200" aria-describedby="f-descripcion-ayuda"></textarea>
+              <p class="campo__ayuda" id="f-descripcion-ayuda">Tipo de inmueble, trabajos que necesitas y fechas tentativas. Máximo 1,200 caracteres.</p>
+            </div>
+          </div>
+
+          <div class="aviso">
+            <p class="aviso__titulo">Aviso sobre tus datos</p>
+            <p>Usaremos la información que nos compartas únicamente para atender tu solicitud y darte seguimiento. Este formulario no guarda datos en ningún servidor: al enviarlo se abre tu aplicación de correo con el mensaje preparado y tú decides si lo envías.</p>
+            <label class="consentimiento">
+              <input type="checkbox" name="consentimiento" required>
+              <span>Acepto que mis datos se usen para atender esta solicitud.</span>
+            </label>
+          </div>
+
+          <p class="formulario__estado" id="formulario-estado" role="status" aria-live="polite"></p>
+          <button class="boton boton--grafito formulario__enviar" type="submit">Preparar correo con mi solicitud</button>
+          <p class="campo__ayuda"><span aria-hidden="true">*</span> Campos obligatorios.</p>
+        </form>
       </div>
     </section>
   </main>
 
-  <!-- ============ PIE DE PÁGINA (único bloque oscuro) ============ -->
+  <!-- ============ PIE DE PÁGINA ============ -->
   <footer class="pie">
     <div class="contenedor pie__rejilla">
       <div class="pie__datos">
         <p class="pie__nombre">Imagen Urbana y Modernización S.A. de C.V.</p>
+        <p class="pie__lema">Construcción, mantenimiento y modernización de inmuebles para los sectores público y privado.</p>
         <p><a href="tel:+525584944232">(55) 8494 4232</a></p>
         <p><a href="mailto:imagen_urbanizacion@outlook.com?subject=Consulta%20de%20proyecto">imagen_urbanizacion@outlook.com</a></p>
         <p>Av. México 49, int. 1, Col. Del Carmen, Coyoacán, CDMX, C.P. 04100.</p>
@@ -221,12 +405,13 @@
         <a href="#inicio">Inicio</a>
         <a href="#nosotros">Nosotros</a>
         <a href="#servicios">Servicios</a>
+        <a href="#experiencia">Experiencia</a>
         <a href="#contacto">Contacto</a>
       </nav>
       <p class="pie__legal">© <span id="anio">2026</span> Imagen Urbana y Modernización S.A. de C.V.</p>
     </div>
   </footer>
 
-  <script src="assets/js/sitio.js?v=2026-10-27-5" defer></script>
+  <script src="assets/js/sitio.js?v=2026-10-27-6" defer></script>
 </body>
 </html>
