@@ -219,7 +219,8 @@ address { font-style: normal; }
 .portada::before {
   content: ""; position: absolute; inset: 0; z-index: -1;
   background:
-    linear-gradient(180deg, rgba(30, 27, 24, .55) 0%, rgba(30, 27, 24, .15) 32%, rgba(30, 27, 24, .55) 62%, rgba(30, 27, 24, .92) 100%);
+    linear-gradient(90deg, rgba(30, 27, 24, .45) 0%, rgba(30, 27, 24, 0) 70%),
+    linear-gradient(180deg, rgba(30, 27, 24, .6) 0%, rgba(30, 27, 24, .3) 28%, rgba(30, 27, 24, .62) 58%, rgba(30, 27, 24, .94) 100%);
 }
 @keyframes acercamiento { from { transform: scale(1); } to { transform: scale(1.09); } }
 
