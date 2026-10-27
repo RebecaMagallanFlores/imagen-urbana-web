@@ -48,20 +48,54 @@
     if (m.matches) cerrarMenu(false);
   });
 
-  /* Aparición suave del contenido */
-  var elementos = document.querySelectorAll(".revelar");
-  if ("IntersectionObserver" in window) {
+  /* Aparición suave del contenido (una sola vez por elemento).
+     Solo se ocultan los elementos que todavía están fuera de pantalla,
+     y solo si este script se ejecuta: sin JavaScript todo queda visible. */
+  var sinMovimiento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var elementos = Array.prototype.slice.call(document.querySelectorAll(".revelar"));
+
+  if (!sinMovimiento && "IntersectionObserver" in window && elementos.length) {
+    /* Retraso escalonado dentro de cada grupo de tarjetas */
+    var grupos = [".servicios__lista", ".galeria__rejilla", ".contacto__datos"];
+    grupos.forEach(function (selector) {
+      var grupo = document.querySelector(selector);
+      if (!grupo) return;
+      grupo.querySelectorAll(".revelar").forEach(function (el, i) {
+        el.style.setProperty("--retraso", (i * 110) + "ms");
+      });
+    });
+
+    var altoVentana = window.innerHeight || document.documentElement.clientHeight;
+    var pendientes = elementos.filter(function (el) {
+      return el.getBoundingClientRect().top > altoVentana * 0.92;
+    });
+    pendientes.forEach(function (el) { el.classList.add("revelar--pendiente"); });
+
     var observador = new IntersectionObserver(function (entradas) {
       entradas.forEach(function (entrada) {
-        if (entrada.isIntersecting) {
-          entrada.target.classList.add("es-visible");
-          observador.unobserve(entrada.target);
-        }
+        if (!entrada.isIntersecting) return;
+        var el = entrada.target;
+        el.classList.add("es-visible");
+        observador.unobserve(el);
+        /* Al terminar se retiran las clases para que no interfieran con otros efectos */
+        el.addEventListener("transitionend", function limpiar(e) {
+          if (e.target !== el || e.propertyName !== "opacity") return;
+          el.removeEventListener("transitionend", limpiar);
+          el.classList.remove("revelar--pendiente", "revelar--anima", "es-visible");
+          el.style.removeProperty("--retraso");
+        });
       });
-    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
-    elementos.forEach(function (el) { observador.observe(el); });
-  } else {
-    elementos.forEach(function (el) { el.classList.add("es-visible"); });
+    }, { rootMargin: "0px 0px -10% 0px", threshold: 0.12 });
+
+    /* Activa las transiciones en el siguiente cuadro, ya con el estado inicial aplicado */
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        pendientes.forEach(function (el) {
+          el.classList.add("revelar--anima");
+          observador.observe(el);
+        });
+      });
+    });
   }
 
   /* Enlace activo del menú según la sección visible */
