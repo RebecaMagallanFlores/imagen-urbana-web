@@ -189,39 +189,41 @@ fieldset { border: 0; padding: 0; min-width: 0; }
   .encabezado-seccion--doble { grid-template-columns: 1.1fr .9fr; align-items: end; column-gap: 4rem; }
 }
 
-/* ---------- Portada: texto y fotografía en dos campos ---------- */
-.portada {
-  display: grid; background: var(--blanco);
-  min-height: calc(100vh - var(--alto-encabezado));
-}
-@supports (min-height: 100svh) { .portada { min-height: calc(100svh - var(--alto-encabezado)); } }
+/* ---------- Portada: texto arriba y fotografía en banda horizontal ---------- */
+/* La foto se muestra en formato horizontal para respetar su resolución original y verse nítida */
+.portada { background: var(--blanco); padding-top: clamp(2.5rem, 6vh, 4.5rem); }
 .portada__texto {
-  display: flex; flex-direction: column; justify-content: center;
-  padding: clamp(2.5rem, 7vh, 5rem) var(--margen) clamp(2.5rem, 7vh, 5rem);
+  max-width: var(--ancho); margin-inline: auto; padding-inline: var(--margen);
+  display: grid; gap: 1.5rem; margin-bottom: clamp(2rem, 5vh, 3.25rem);
 }
 .portada__titulo {
-  font-size: var(--t-portada); line-height: 1.04; font-weight: 640; font-stretch: 104%;
-  letter-spacing: -.022em; max-width: 18ch; margin-bottom: 1.5rem; text-wrap: balance;
+  font-size: var(--t-portada); line-height: 1.05; font-weight: 640; font-stretch: 104%;
+  letter-spacing: -.022em; max-width: 20ch; text-wrap: balance;
 }
-.portada__bajada { max-width: 46ch; font-size: var(--t-grande); line-height: 1.6; color: var(--texto-suave); margin-bottom: 2.25rem; }
-.portada__foto { position: relative; overflow: hidden; background: var(--piedra); min-height: 40vh; }
+.portada__bajada { max-width: 48ch; font-size: var(--t-grande); line-height: 1.6; color: var(--texto-suave); margin-bottom: 1.75rem; }
+.portada__texto .seccion__marca { margin-bottom: 0; }
+.portada__foto {
+  position: relative; overflow: hidden; background: var(--piedra);
+  max-width: calc(var(--ancho) - 2 * var(--margen)); margin-inline: auto;
+  aspect-ratio: 4 / 3; border-bottom: 4px solid var(--oro);
+}
 .portada__foto img {
-  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 60% 50%;
-  transform-origin: 55% 50%; will-change: transform;
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 55% 45%;
+  transform-origin: 55% 45%; will-change: transform;
   animation: acercamiento 18s ease-in-out infinite alternate;
 }
 @keyframes acercamiento { from { transform: scale(1); } to { transform: scale(1.06); } }
-.portada__foto::after { /* línea dorada vertical: borde del campo fotográfico */
-  content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--oro);
+@media (max-width: 959px) {
+  .portada { display: flex; flex-direction: column; padding-top: 0; }
+  .portada__foto { order: -1; margin: 0 0 clamp(2rem, 6vw, 2.75rem); max-width: none; }
 }
-@media (min-width: 900px) {
-  .portada { grid-template-columns: minmax(0, 50fr) minmax(0, 50fr); }
-  .portada__texto { padding-left: max(var(--margen), calc((100vw - var(--ancho)) / 2 + var(--margen))); padding-right: clamp(2rem, 4vw, 4rem); }
-  .portada__foto { min-height: 0; }
-}
-@media (max-width: 899px) {
-  .portada__foto { order: -1; }
-  .portada__foto::after { left: 0; right: 0; top: auto; bottom: 0; width: auto; height: 4px; }
+@media (min-width: 600px) { .portada__foto { aspect-ratio: 16 / 9; } }
+@media (min-width: 960px) {
+  .portada__texto { grid-template-columns: 1.15fr .85fr; column-gap: clamp(3rem, 6vw, 6rem); align-items: end; }
+  .portada__texto .seccion__marca { grid-column: 1 / -1; }
+  .portada__titulo { font-size: clamp(2.4rem, 3.9vw, 3.75rem); }
+  .portada__bajada { margin-bottom: 1.5rem; }
+  .portada__foto { aspect-ratio: 21 / 9; max-height: 62vh; width: 100%; }
 }
 
 /* Entrada de la portada (una vez) */
@@ -229,7 +231,6 @@ fieldset { border: 0; padding: 0; min-width: 0; }
 .js .portada__texto > :nth-child(1) { animation-delay: .05s; }
 .js .portada__texto > :nth-child(2) { animation-delay: .15s; }
 .js .portada__texto > :nth-child(3) { animation-delay: .3s; }
-.js .portada__texto > :nth-child(4) { animation-delay: .42s; }
 @keyframes aparecer { to { opacity: 1; transform: none; } }
 
 /* ---------- Franja institucional ---------- */
@@ -261,7 +262,7 @@ fieldset { border: 0; padding: 0; min-width: 0; }
 .nosotros__texto .seccion__marca { margin-bottom: 0; }
 .nosotros__texto .titulo-seccion { color: var(--grafito); margin-bottom: .4rem; }
 .nosotros__texto .destacado { color: var(--grafito); font-size: var(--t-grande); line-height: 1.55; }
-@media (max-width: 899px) { .nosotros__foto img { aspect-ratio: 4 / 3; } }
+@media (max-width: 899px) { .nosotros__foto img { aspect-ratio: 4 / 3; object-position: 50% 35%; } }
 @media (min-width: 900px) { .nosotros__rejilla { grid-template-columns: .85fr 1.15fr; column-gap: clamp(3.5rem, 7vw, 7rem); } }
 
 /* Misión y visión */

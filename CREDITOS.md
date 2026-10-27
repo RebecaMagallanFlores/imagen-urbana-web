@@ -1,21 +1,23 @@
 # Créditos y licencias de recursos
 
-## Fotografías (Licencia Unsplash)
+## Fotografías
 
-Todas las fotografías son **imágenes de referencia**: no muestran obras de Imagen Urbana y Modernización y no deben presentarse como proyectos propios. Para agregar proyectos reales y autorizados, ver el comentario "ESPACIO PARA PROYECTOS AUTORIZADOS" en `index.html`.
-Se usan bajo la [Licencia Unsplash](https://unsplash.com/license), que permite uso gratuito comercial y no comercial sin atribución obligatoria. Se dejan los créditos como cortesía y registro de procedencia.
+Todas las fotografías del sitio son **propias de Imagen Urbana y Modernización S.A. de C.V.** (banco de fotos de proyectos reales), en `assets/img/proyectos/`.
 
-| Archivo | Uso en el sitio | Autor | Fuente |
-|---|---|---|---|
-| `assets/img/inicio-2000.webp`, `inicio-1100.webp`, `compartir-inicio.jpg` | Portada y vista previa al compartir | Pierre Châtel-Innocenti | https://unsplash.com/photos/white-concrete-building-h9ek6QA2jOU |
-| `assets/img/nosotros.webp` | Sección Nosotros | Eduardo Gorghetto | https://unsplash.com/photos/white-architectural-structure-with-stairs-and-blue-sky-Y9uYq6aDHAU |
-| `assets/img/estructura.webp` | Servicio Construcción | Jacek Dylag | https://unsplash.com/photos/gray-metal-building-frame-near-tower-crane-during-daytime-nhCPOp4A2Xo |
-| `assets/img/servicio-mantenimiento.webp` | Servicio Mantenimiento y conservación | Pavel Boltov | https://unsplash.com/photos/window-cleaner-rappels-down-a-building-facade-6I0di73uRdw |
-| `assets/img/servicio-modernizacion.webp` | Servicio Modernización | Jason Briscoe | https://unsplash.com/photos/white-wooden-kitchen-island-and-cupboard-cabinets-near-glass-panel-door-AQl-J19ocWE |
-| `assets/img/ciudad.webp` | Bloque Sector público (Experiencia) | Samuel Regan-Asante | https://unsplash.com/photos/people-walking-on-paved-area-with-modern-buildings-wCjB6_qGlcI |
-| `assets/img/fachada.webp` | Bloque Sector privado (Experiencia) | Tannis Sullivan | https://unsplash.com/photos/a-modern-building-has-a-geometric-glass-facade-2lzOwGQs5PA |
+Preparación aplicada:
+- Recorte a la proporción de cada uso, sin ampliar la resolución original, y enfoque ligero (máscara de enfoque) para nitidez.
+- Se retiraron marcas de agua de teléfono, fecha y nombre de empresa, así como un texto parcial en un overol.
+- No se incluyen nombres de dependencias, clientes, ubicaciones ni datos contractuales.
 
-Las imágenes se descargaron recortadas y optimizadas (WebP) con `scripts/descargar-recursos.sh`.
+| Archivo | Uso en el sitio |
+|---|---|
+| `portada-1280.webp`, `portada-900.webp`, `../compartir.jpg` | Portada y vista previa al compartir |
+| `nosotros.webp` | Sección Nosotros |
+| `servicio-construccion.webp` | Servicio Construcción |
+| `servicio-mantenimiento.webp` | Servicio Mantenimiento y conservación |
+| `servicio-modernizacion.webp` | Servicio Modernización de espacios |
+| `sector-publico.webp` | Bloque Sector público (Experiencia) |
+| `sector-privado.webp` | Bloque Sector privado (Experiencia) |
 
 ## Tipografía
 

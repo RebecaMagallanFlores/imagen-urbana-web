@@ -25,7 +25,7 @@ Sube el número `?v=` de `estilos.css` y `sitio.js` en `index.html` para que los
 
 ## Fotografías
 
-Ya están guardadas y optimizadas en `assets/img/`. Para cambiar una foto, reemplaza el archivo con otro del mismo nombre y proporción. Procedencia en `CREDITOS.md`.
+Son fotos propias, guardadas en `assets/img/proyectos/`. Para cambiar una, reemplaza el archivo por otro del mismo nombre y proporción (portada 16:9, servicios 4:3, sectores 16:9, Nosotros 4:5). Detalle en `CREDITOS.md`.
 
 ## Sin servicios adicionales
 
