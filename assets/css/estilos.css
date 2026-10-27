@@ -311,7 +311,6 @@ address { font-style: normal; }
 .servicios__nota a { color: var(--carbon); font-weight: 600; text-decoration-color: var(--oro); text-underline-offset: 5px; }
 .servicios__nota a:hover { color: var(--oro-texto); }
 
-.nota-ilustrativa { margin-top: 1rem; font-size: var(--t-chica); color: var(--carbon-suave); }
 
 /* Galería */
 .galeria__titulo { margin-bottom: clamp(2rem, 5vw, 3.5rem); }
